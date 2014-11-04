@@ -1,0 +1,148 @@
+/* Font imports */
+@font-face {
+    src: url("../fonts/Opificio.ttf");
+    font-family: "Opificio";
+    font-weight: normal;
+}
+
+@font-face {
+    src: url("../fonts/Opificio-Bold.ttf");
+    font-family: "Opificio";
+    font-weight: bold;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    word-wrap: break-word;
+    font-weight: normal;
+}
+
+body {
+    background: #fff6d4;
+    font-family: "Opificio", "Century Gothic", sans-serif;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+
+input {
+    font-family: "Opificio", "Century Gothic", sans-serif;
+}
+
+input[type="text"], input[type="password"] {
+    padding: 3px 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    background: #fff;
+    margin-bottom: 3px;
+}
+
+a {
+    color: #fff;
+}
+
+#header #stripe-1 {
+    background: #123752;
+    height: 50px;
+    width: 100%;
+}
+
+#header #stripe-2 {
+    background: #486e88;
+    height: 70px;
+    width: 100%;
+}
+
+#header #stripe-3 {
+    background: #708ea4;
+    height: 16px;
+    width: 100%;
+}
+
+#header #hcontent {
+    min-width: 950px;
+    width: 75%;
+    height: 132px;
+    margin: 13px 13% 0 12%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#header #hcontent #categories {
+    margin: 50px 10% 0 0;
+    font-size: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: auto;
+}
+
+#header #hcontent #categories .cat {
+    margin-right: 25px;
+    padding: 4px 12px;
+    height: 35px;
+    border-left: 3px solid;
+}
+
+#header #hcontent #categories #cat-cds {
+    border-color: #c71ec5;
+}
+
+#header #hcontent #categories #cat-dvds {
+    border-color: #2da84b;
+}
+
+#header #hcontent #categories #cat-cds:hover {
+    background: rgba(199,30,197,.4);
+}
+
+#header #hcontent #categories #cat-dvds:hover {
+    background: rgba(30,199,42,.4);
+}
+
+#header #hcontent #login {
+    margin-top: 45px;
+}
+
+#header #hcontent #login, #header #hcontent #signin form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#header #hcontent #login input[type="text"], #header #hcontent #login input[type="password"] {
+    font-size: 14px;
+}
+
+#header #hcontent #login input[type="submit"] {
+    border: none;
+    background: #d4be6a;
+    border-radius: 3px;
+    color: #486e88;
+    margin-left: 3px;
+    padding: 18px 6px;
+    font-size: 16px;
+}
+
+#header #hcontent #login a {
+    color: #d4be6a;
+    text-decoration: underline;
+}
+
+#register-link {
+    margin: 10px 0 0 15px;
+    text-align: center;
+}
+
+#container {
+    background: #d4be6a;
+    min-height: 250px;
+    min-width: 900px;
+    width: 70%;
+    margin: 45px auto 15px auto;
+    text-align: left;
+}
