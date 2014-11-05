@@ -20,6 +20,9 @@
     font-weight: normal;
 }
 
+/*
+ *  GENERAL
+ */
 body {
     background: #fff6d4;
     font-family: "Opificio", "Century Gothic", sans-serif;
@@ -44,6 +47,11 @@ a {
     color: #fff;
 }
 
+/*
+ *  HEADER
+ */
+
+/* Stripes */
 #header #stripe-1 {
     background: #123752;
     height: 50px;
@@ -62,6 +70,7 @@ a {
     width: 100%;
 }
 
+/* Content */
 #header #hcontent {
     min-width: 950px;
     width: 75%;
@@ -73,6 +82,7 @@ a {
     flex-wrap: wrap;
 }
 
+/* Categories */
 #header #hcontent #categories {
     margin: 50px 10% 0 0;
     font-size: 30px;
@@ -89,12 +99,20 @@ a {
     border-left: 3px solid;
 }
 
+#header #hcontent #categories #cat-all {
+    border-color: #f0f313;
+}
+
 #header #hcontent #categories #cat-cds {
     border-color: #c71ec5;
 }
 
 #header #hcontent #categories #cat-dvds {
     border-color: #2da84b;
+}
+
+#header #hcontent #categories #cat-all:hover {
+    background: rgba(240,243,19,.4);
 }
 
 #header #hcontent #categories #cat-cds:hover {
@@ -105,6 +123,7 @@ a {
     background: rgba(30,199,42,.4);
 }
 
+/* Login Box */
 #header #hcontent #login {
     margin-top: 45px;
 }
@@ -138,11 +157,60 @@ a {
     text-align: center;
 }
 
+/*
+ *  MAIN CONTENT
+ */
 #container {
     background: #d4be6a;
     min-height: 250px;
+    height: 60%;
     min-width: 900px;
-    width: 70%;
-    margin: 45px auto 15px auto;
+    width: 64%;
+    margin: 50px auto 15px auto;
+    padding: 0 3%;
     text-align: left;
+    font-size: 15px;
+    color: #032137;
+}
+
+#container h1 {
+    color: #554300;
+}
+
+#container a {
+    color: #123752;
+    text-decoration: underline;
+}
+
+#content {
+    position: absolute;
+    margin-top: -18px;
+    width: 66%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#content .item {
+    background: #af5784;
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 6px;
+    width: 45%;
+    margin: 0 1.5% 3% 1.5%;
+}
+
+#content .item .cover {
+    margin: 6px;
+}
+
+#content .item .info {
+    margin-left: 5px;
+    width: 50%;
+}
+
+#content .item .price {
+    width: calc(50% - 90px);
+    text-align: right;
+    margin: 25px 0;
 }
