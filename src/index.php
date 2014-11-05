@@ -21,12 +21,12 @@
         <div id="hcontent">
             <img src="img/logo.png" />
             <div id="categories">
-                <a href="?list_items"><div id="cat-all" class="cat">All</div></a>
-                <a href="?list_items&cat=cd"><div id="cat-cds" class="cat">CDs</div></a>
-                <a href="?list_items&cat=dvd"><div id="cat-dvds" class="cat">DVDs</div></a>
+                <a href="?p=list_items"><div id="cat-all" class="cat">All</div></a>
+                <a href="?p=list_items&cat=cd"><div id="cat-cds" class="cat">CDs</div></a>
+                <a href="?p=list_items&cat=dvd"><div id="cat-dvds" class="cat">DVDs</div></a>
             </div>
             <div id="login">
-                <div id="signin"><form action="action/login.php" method="post">
+                <div id="signin"><form action="?act=login" method="post">
                     <div id="signin-fields">
                         <input id="username" placeholder="Username" type="text" /><br />
                         <input id="password" placeholder="Password" type="password" />
@@ -37,7 +37,7 @@
                 </form></div>
                 <div id="register-link">
                     <p>Don't have an account?</p>
-                    <p><a href="?=register">Register here!</a></p>
+                    <p><a href="?p=register">Register here!</a></p>
                 </div>
             </div>
         </div>

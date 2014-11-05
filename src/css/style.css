@@ -177,7 +177,7 @@ a {
     color: #554300;
 }
 
-#container a {
+#container .message a {
     color: #123752;
     text-decoration: underline;
 }
