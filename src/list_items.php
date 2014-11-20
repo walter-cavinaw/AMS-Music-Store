@@ -10,10 +10,11 @@
     $result = $query->get_result();
 
     while ($row = $result->fetch_assoc()) {
-        if (!file_exists('img/covers/'.$row['upc']))
+        if (!file_exists('img/covers/'.$row['upc'].'.jpg'))
             $cover = "unknown";
         else
             $cover = $row['upc'];
+        
         echo '<a href="?p=display_item&id='.$row['upc'].'" class="item"><div class="cover"><img src="img/covers/'.$cover.'.jpg" width="64px" height="64px" /></div><div class="info"><h2>'.$row['title'].'</h2>'.$row['itemtype'].'<br />'.$row['category'].'<br />'.$row['releaseyear'].'</div><div class="price"><h2>$'.number_format($row['price'], 2).'</h2></div></a>';
     }
 
