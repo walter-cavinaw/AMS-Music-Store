@@ -19,7 +19,7 @@
 <body>
     <div id="header">
         <div id="hcontent">
-            <img src="img/logo.png" />
+            <a href="index.php"><img src="img/logo.png" /></a>
             <div id="categories">
                 <a href="?p=list_items"><div id="cat-all" class="cat">All</div></a>
                 <a href="?p=list_items&cat=cd"><div id="cat-cds" class="cat">CDs</div></a>

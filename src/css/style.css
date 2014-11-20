@@ -216,11 +216,6 @@ a {
     margin: 25px 0;
 }
 
-#content .cover_container {
-    height: 100%;
-    background: #000;
-}
-
 #content .album_info {
     margin: 35px 10px 10px 30px;
     width: 63%;
@@ -233,4 +228,16 @@ a {
 
 #content .album_info #album_lists div {
     width: 45%;
+}
+
+#content .album_price {
+    text-align: center;
+    margin-top: 45px;
+}
+
+#content .album_price #buy_album {
+    background: #af5784;
+    color: #fff;
+    padding: 10px;
+    margin-top: 10px;
 }
