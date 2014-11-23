@@ -47,7 +47,7 @@
         
         echo '<div class="album_price">';
         echo '<h1>$'.number_format($result['price'], 2).'</h1>';
-        echo '<a href="?p=buy&id='.$_GET['id'].'"><div id="buy_album"><h2>Buy</h2>';
+        echo '<a href="?p=add_to_cart&id='.$_GET['id'].'"><div id="buy_album"><h2>Add to cart</h2>';
         echo '<p>'.$result['stock'].' left in stock</p></div></a></div>';
     } else
         require("404.php");

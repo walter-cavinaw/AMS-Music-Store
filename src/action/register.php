@@ -9,11 +9,11 @@
                 // Check if intert was successful
                 if ($query->affected_rows >= 1) {
                     echo '<h1>New user registered with success</h1>';
-                    echo '<p>The new user has been successfully added to the database.</p>';
+                    echo '<p>The new user has been successfully added to the database.<br />Your user ID is '.$query->insert_id.'. Use it to log into the system from now on.</p>';
                     echo '<p><a href="index.php">Go to the main page</a></p>';
                 } else {
                     echo '<h1>Error registering</h1>';
-                    echo '<p>New user could not be added to the database. Please check the data you input and try again.</p>';
+                    echo '<p>New user could not be added to the database.<br />Please check the data you input and try again.</p>';
                     echo '<p><a href="javascript:history.go(-1)">Go Back</a></p>';
                 }
         } else {

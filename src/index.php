@@ -27,7 +27,7 @@
                 <?php
                     if ($loggedin) {
                         echo '<div>Welcome! You\'re logged in as ID '.$_SESSION['username'].'.<br />';
-                        echo '<a href="?act=logout">Log out</a></div>';
+                        echo '<a href="?p=cart">View Cart</a> | <a href="?act=logout">Log out</a></div>';
                     } else {
                         echo '<div id="signin"><form action="?act=login" method="post">';
                         echo '    <div id="signin-fields">';
