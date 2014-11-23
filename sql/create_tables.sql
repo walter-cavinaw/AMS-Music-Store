@@ -41,7 +41,7 @@ CREATE TABLE has_song (
 );
 
 CREATE TABLE customer (
-    cid INT NOT NULL,
+    cid INT NOT NULL AUTO_INCREMENT,
     cpassword VARCHAR(32) NOT NULL,
     cname VARCHAR(64) NOT NULL,
     address VARCHAR(128) NOT NULL,
@@ -50,7 +50,7 @@ CREATE TABLE customer (
 );
 
 CREATE TABLE purchase (
-    receiptId INT NOT NULL,
+    receiptId INT NOT NULL AUTO_INCREMENT,
     pdate DATE NOT NULL,
     cid INT NOT NULL,
     cardNumber CHAR(16) NOT NULL,
@@ -81,7 +81,7 @@ CREATE TABLE purchase_item (
 
 DROP TABLE IF EXISTS purchase_return;
 CREATE TABLE purchase_return (
-    retid INT NOT NULL,
+    retid INT NOT NULL AUTO_INCREMENT,
     retdate DATE NOT NULL,
     receiptId INT NOT NULL,
     PRIMARY KEY (retid)
