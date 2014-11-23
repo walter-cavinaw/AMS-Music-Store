@@ -15,7 +15,7 @@
         else
             echo 'unknown';
         
-        echo '.jpg" /></div><div class="album_info">';
+        echo '.jpg" width="128px" height="128px" /></div><div class="album_info">';
         echo '<h1>'.$result['title'].'</h1>';
         echo '<p>'.$result['itemtype'].'</p>';
         echo '<p>'.$result['category'].'</p>';
