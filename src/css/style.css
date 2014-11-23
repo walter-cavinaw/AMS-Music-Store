@@ -247,3 +247,9 @@ a {
     margin: 5px 0;
     padding: 3px;
 }
+
+#content #pager {
+    font-size: 17px;
+    width: 100%;
+    text-align: center;
+}

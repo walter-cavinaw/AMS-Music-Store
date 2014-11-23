@@ -2,8 +2,6 @@
     // Start Session
     session_start();
     $loggedin = (isset($_SESSION['username']));
-    if ($loggedin)
-        $user = $_SESSION['username'];
 
     // Connect to database
     require("config.php");
@@ -26,19 +24,26 @@
                 <a href="?p=list_items&cat=dvd"><div id="cat-dvds" class="cat">DVDs</div></a>
             </div>
             <div id="login">
-                <div id="signin"><form action="?act=login" method="post">
-                    <div id="signin-fields">
-                        <input id="username" placeholder="Username" type="text" /><br />
-                        <input id="password" placeholder="Password" type="password" />
-                    </div>
-                    <div id="signin-button">
-                        <input name="signin" value="Sign in" type="submit" />
-                    </div>
-                </form></div>
-                <div id="register-link">
-                    <p>Don't have an account?</p>
-                    <p><a href="?p=register">Register here!</a></p>
-                </div>
+                <?php
+                    if ($loggedin) {
+                        echo '<div>Welcome! You\'re logged in as ID '.$_SESSION['username'].'.<br />';
+                        echo '<a href="?act=logout">Log out</a></div>';
+                    } else {
+                        echo '<div id="signin"><form action="?act=login" method="post">';
+                        echo '    <div id="signin-fields">';
+                        echo '        <input name="username" placeholder="Username" type="text" /><br />';
+                        echo '        <input name="password" placeholder="Password" type="password" />';
+                        echo '    </div>';
+                        echo '    <div id="signin-button">';
+                        echo '        <input name="signin" value="Sign in" type="submit" />';
+                        echo '    </div>';
+                        echo '</form></div>';
+                        echo '<div id="register-link">';
+                        echo '    <p>Don\'t have an account?</p>';
+                        echo '    <p><a href="?p=register">Register here!</a></p>';
+                        echo '</div>';
+                    }
+                ?>
             </div>
         </div>
         <div id="stripe-1"></div>
