@@ -46,9 +46,11 @@
         echo '</div></div>';
         
         echo '<div class="album_price">';
-        echo '<h1>$'.number_format($result['price'], 2).'</h1>';
-        echo '<a href="?p=add_to_cart&id='.$_GET['id'].'"><div id="buy_album"><h2>Add to cart</h2>';
-        echo '<p>'.$result['stock'].' left in stock</p></div></a></div>';
+        echo '<h1>$'.number_format($result['price'], 2).'</h1><br />';
+        echo '<form action="?act=add_to_cart&id='.$_GET['id'].'" method="post">';
+        echo '<p>Quantity: <input type="number" name="quantity" value="1" min="1" max="'.$result['stock'].'" /></p>';
+        echo '<button id="buy_album"><h2>Add to cart</h2>';
+        echo '<p>'.$result['stock'].' left in stock</p></button></form></div>';
     } else
         require("404.php");
 ?>

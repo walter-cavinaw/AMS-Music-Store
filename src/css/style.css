@@ -6,7 +6,7 @@
 }
 
 @font-face {
-    src: url("../fonts/Opificio-Bold.ttf");
+    src: url("../fonts/Opificio_Bold.ttf");
     font-family: "Opificio";
     font-weight: bold;
 }
@@ -29,6 +29,10 @@ body {
     color: #fff;
     font-size: 14px;
     text-align: center;
+}
+
+strong {
+    font-weight: bold;
 }
 
 input {
@@ -171,6 +175,7 @@ a {
     text-align: left;
     font-size: 15px;
     color: #032137;
+    border-radius: 20px 0;
 }
 
 #container h1 {
@@ -199,6 +204,7 @@ a {
     padding: 6px;
     width: 45%;
     margin: 0 1.5% 3% 1.5%;
+    border-radius: 10px 0;
 }
 
 #content .item .cover {
@@ -235,11 +241,20 @@ a {
     margin-top: 45px;
 }
 
-#content .album_price #buy_album {
+#content .album_price #buy_album, #content input[type=submit] {
     background: #af5784;
     color: #fff;
     padding: 10px;
     margin-top: 10px;
+    border: none;
+    font-family: "Opificio", "Century Gothic", sans-serif;
+    border-radius: 10px 0;
+}
+
+#content input[type=text], #content input[type=number] {
+    padding: 6px;
+    border: none;
+    border-radius: 5px 0;
 }
 
 #content #registration input {
