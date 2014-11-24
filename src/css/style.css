@@ -58,7 +58,7 @@ a {
 /* Stripes */
 #header #stripe-1 {
     background: #123752;
-    height: 50px;
+    height: 27px;
     width: 100%;
 }
 
@@ -70,7 +70,7 @@ a {
 
 #header #stripe-3 {
     background: #708ea4;
-    height: 16px;
+    height: 40px;
     width: 100%;
 }
 
@@ -79,7 +79,7 @@ a {
     min-width: 950px;
     width: 75%;
     height: 132px;
-    margin: 13px 13% 0 12%;
+    margin: 10px 13% 0 12%;
     position: absolute;
     display: flex;
     justify-content: space-between;
@@ -88,12 +88,11 @@ a {
 
 /* Categories */
 #header #hcontent #categories {
-    margin: 50px 10% 0 0;
     font-size: 30px;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
-    margin: auto;
+    margin: 30px auto;
 }
 
 #header #hcontent #categories .cat {
@@ -129,7 +128,7 @@ a {
 
 /* Login Box */
 #header #hcontent #login {
-    margin-top: 45px;
+    margin-top: 25px;
 }
 
 #header #hcontent #login, #header #hcontent #signin form {
