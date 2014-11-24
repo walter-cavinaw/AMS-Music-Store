@@ -261,6 +261,11 @@ a {
     margin: 5px 0;
     padding: 3px;
 }
+#content #add_item input {
+    font-size: 18px;
+    margin: 5px 0;
+    padding: 3px;
+}
 
 #content #pager {
     font-size: 17px;
