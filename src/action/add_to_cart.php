@@ -1,9 +1,9 @@
 <div>
     <?php
         if(!$loggedin){ //Make sure the user is logged in
-            echo '<h1>Error checking out</h1>';
-            echo '<p>You must be logged in to checkout.<p>';
-            echo '<p>If you already have an account, please log in through the top right corner of the page;</p';
+            echo '<h1>Error Adding to Cart</h1>';
+            echo '<p>You must be logged in to use the cart.<p>';
+            echo '<p>If you already have an account, please log in through the top right corner of the page; </p';
             echo '<p>If you don\'t have an account, you can <a href="?p=register">register here</a>, it only takes a few seconds!</a>';
             die();
             
