@@ -37,14 +37,14 @@
             $query->bind_param('ss', $_POST['date'], $row['upc']);
             $query->execute();
             $quantitiesSold = $query->get_result()->fetch_row();
-            var_dump($quantitiesSold);
+
             //Display the data for each upc
                 echo '<tr>';
                 echo '   <td>' . $row['upc'] . '</td>';
                 echo '   <td>' . $row['category'] . '</td>';
                 echo '   <td>' . $row['price'] . '</td>';
                 echo '   <td>' . $quantitiesSold[0] . '</td>';
-                echo '   <td>' . $row['upc'] . '</td>';
+                echo '   <td>' . $quantitiesSold[0]*$row['price'] . '</td>';
                 echo '</tr>';
         }
         echo '</table>';
