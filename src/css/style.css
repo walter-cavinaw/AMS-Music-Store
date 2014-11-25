@@ -296,3 +296,9 @@ a {
     margin: 5px 0;
     padding: 3px;
 }
+
+#content #top_selling input {
+    font-size: 18px;
+    margin: 5px 0;
+    padding: 3px;
+}
