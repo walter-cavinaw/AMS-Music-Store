@@ -22,13 +22,13 @@
         
         //Set up the column headers
         echo '<h1>Total sales for ' . $_POST['date'] . '</h1>';
-        echo '<table>';
+        echo '<table width=100%>';
         echo '   <tr>';
-        echo '      <th>UPC</th>';
-        echo '      <th>Category</th>';
-        echo '      <th>Price/unit</th>';
-        echo '      <th>Units Sold</th>';
-        echo '      <th>Total Sales</th>';
+        echo '      <th width=15%>UPC</th>';
+        echo '      <th width=30%>Category</th>';
+        echo '      <th width=15%>Price/unit</th>';
+        echo '      <th width=15%>Units Sold</th>';
+        echo '      <th width=15%>Total Sales</th>';
         echo '   </tr>';
         
     $totalSales = '';
@@ -41,11 +41,11 @@
             //If this isnt the same category as the last one we need to print out the totals from the last category
             if($prevRowCategory!=$row['category'] && $prevRowCategory!=''){
                 echo '<tr>';
-                echo '   <td> </td>';
-                echo '   <td>Total: </td>';
-                echo '   <td></td>';
-                echo '   <td>' . $prevRowRunningSales . '</td>';
-                echo '   <td>$' . $prevRowRunningValue . '</td>';
+                echo '   <td align="right"> </td>';
+                echo '   <td align="right"> </td>';
+                echo '   <td align="right">Total:</td>';
+                echo '   <td align="right">' . $prevRowRunningSales . '</td>';
+                echo '   <td align="right">$' . $prevRowRunningValue . '</td>';
                 echo '</tr>';
                 
                 //Reset the variables
@@ -62,11 +62,11 @@
 
             //Display the data for this row
                 echo '<tr>';
-                echo '   <td>' . $row['upc'] . '</td>';
-                echo '   <td>' . $row['category'] . '</td>';
-                echo '   <td>$' . $row['price'] . '</td>';
-                echo '   <td>' . $quantitiesSold[0] . '</td>';
-                echo '   <td>$' . $quantitiesSold[0]*$row['price'] . '</td>';
+                echo '   <td align="right">' . $row['upc'] . '</td>';
+                echo '   <td align="right">' . $row['category'] . '</td>';
+                echo '   <td align="right">$' . $row['price'] . '</td>';
+                echo '   <td align="right">' . $quantitiesSold[0] . '</td>';
+                echo '   <td align="right">$' . $quantitiesSold[0]*$row['price'] . '</td>';
                 echo '</tr>';
             
             //Add to the total daily sales
@@ -80,27 +80,27 @@
         }
         //Print the last column of sales
         echo '<tr>';
-        echo '   <td> </td>';
-        echo '   <td>Total: </td>';
-        echo '   <td></td>';
-        echo '   <td>' . $prevRowRunningSales . '</td>';
-        echo '   <td>$' . $prevRowRunningValue . '</td>';
+        echo '   <td align="right"> </td>';
+        echo '   <td align="right"></td>';
+        echo '   <td align="right">Total:</td>';
+        echo '   <td align="right">' . $prevRowRunningSales . '</td>';
+        echo '   <td align="right">$' . $prevRowRunningValue . '</td>';
         echo '</tr>';
         //Blank line
         echo '<tr>';
-        echo '   <td> </td>';
-        echo '   <td> </td>';
-        echo '   <td> </td>';
-        echo '   <td> </td>';
-        echo '   <td>--------</td>';
+        echo '   <td align="right"> </td>';
+        echo '   <td align="right"> </td>';
+        echo '   <td align="right"> </td>';
+        echo '   <td align="right"> </td>';
+        echo '   <td align="right">--------</td>';
         echo '</tr>';
         //Total for the entire day
         echo '<tr>';
-        echo '   <td> </td>';
-        echo '   <td>Total Daily Sales: </td>';
-        echo '   <td> </td>';
-        echo '   <td>' . $totalSales . '</td>';
-        echo '   <td>$' . $totalValue . '</td>';
+        echo '   <td align="right"> </td>';
+        echo '   <td align="right">Total Daily Sales: </td>';
+        echo '   <td align="right"> </td>';
+        echo '   <td align="right">' . $totalSales . '</td>';
+        echo '   <td align="right">$' . $totalValue . '</td>';
         echo '</tr>';
         echo '</table>';
         echo '<p><a href="javascript:history.go(-1)">Go Back</a></p>';
