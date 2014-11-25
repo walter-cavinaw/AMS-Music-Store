@@ -22,7 +22,7 @@
         echo '<h1>Succesfully updated delivery.</h1>';
         echo '<p><a href="javascript:history.go(-1)">Go Back</a></p>';
     } else {
-        echo '<h1>Error adding item</h1>';
+        echo '<h1>Error processing delivery</h1>';
         echo '<p>You must specify a UPC and quantity.</p>';
         echo '<p><a href="javascript:history.go(-1)">Go Back</a></p>';
     }
