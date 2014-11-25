@@ -274,6 +274,12 @@ a {
     padding: 3px;
 }
 
+#content #daily_report input {
+    font-size: 18px;
+    margin: 5px 0;
+    padding: 3px;
+}
+
 #content #pager {
     font-size: 17px;
     width: 100%;
