@@ -1,15 +1,15 @@
 <div>
     <?php
-        if (!empty($_POST['password']) && !empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['phone'])) {
+        if (!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['name']) && !empty($_POST['address']) && !empty($_POST['phone'])) {
                 // Add new member to database
-                $query = $connection->prepare('INSERT INTO customer (cpassword, cname, address, phone) VALUES (?, ?, ?, ?)');
-                $query->bind_param('ssss', $_POST['password'], $_POST['name'], $_POST['address'], $_POST['phone']);
+                $query = $connection->prepare('INSERT INTO customer (cid, cpassword, cname, address, phone) VALUES (?, ?, ?, ?, ?)');
+                $query->bind_param('sssss', $_POST['username'], $_POST['password'], $_POST['name'], $_POST['address'], $_POST['phone']);
                 $query->execute();
 
                 // Check if intert was successful
                 if ($query->affected_rows >= 1) {
                     echo '<h1>New user registered with success</h1>';
-                    echo '<p>The new user has been successfully added to the database.<br />Your user ID is '.$query->insert_id.'. Use it to log into the system from now on.</p>';
+                    echo '<p>The new user has been successfully added to the database.</p>';
                     echo '<p><a href="index.php">Go to the main page</a></p>';
                 } else {
                     echo '<h1>Error registering</h1>';
