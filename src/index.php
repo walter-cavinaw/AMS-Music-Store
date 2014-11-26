@@ -41,7 +41,7 @@
                         echo '<div id="register-link">';
                         echo '    <p>Don\'t have an account?</p>';
                         echo '    <p><a href="?p=register">Register here!</a></p>';
-                        echo '    <p><a href="?p=manager">Manager</a> | | <a href="">Clerk</a></p>';
+                        echo '    <p><a href="?p=manager">Manager</a> | | <a href="?p=clerk">Clerk</a></p>';
                         echo '</div>';
                     }
                 ?>
