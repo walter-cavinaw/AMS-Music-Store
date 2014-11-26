@@ -1,6 +1,11 @@
 <div id="cart">
     <?php
-        if (!empty($_SESSION['cart'])) {
+        if (!$loggedin) {
+            echo '<h1>Checkout failed</h1><br />';
+            echo '<p>You must be logged into the system to checkout.</p>';
+            echo '<p>If you already have an account, please log in through the top right corner of the page;</p>';
+            echo '<p>If you don\'t have an account, you can <a href="?p=register">register here</a>, it only takes a few seconds!</a>';
+        } elseif (!empty($_SESSION['cart'])) {
             $total = 0;
             $no_stock = false;
             foreach ($_SESSION['cart'] as $id => $quantity) {
