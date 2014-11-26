@@ -38,5 +38,5 @@
             echo 'cat='.$_GET['cat'].'&';
         echo 'page='.$i.'">[ '.$i.' ]</a> ';
     }
-echo '</div>';
+    echo '</div>';
 ?>

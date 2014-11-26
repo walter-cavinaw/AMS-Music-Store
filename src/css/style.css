@@ -35,7 +35,7 @@ strong {
     font-weight: bold;
 }
 
-input {
+input, select {
     font-family: "Opificio", "Century Gothic", sans-serif;
 }
 
@@ -155,9 +155,24 @@ a {
     text-decoration: underline;
 }
 
-#register-link {
+#header #register-link {
     margin: 10px 0 0 15px;
     text-align: center;
+}
+
+#header #search_bar {
+    position: absolute;
+    margin: 105px 26% 0 calc(12% + 275px);
+    background: #fff;
+    border-radius: 10px 0;
+    padding: 3px 7px 2px 7px;
+    width: 30%;
+}
+
+#header #search_bar input, #header #search_bar select {
+    border: none;
+    padding: 0;
+    border-radius: 0;
 }
 
 /*
@@ -266,6 +281,8 @@ a {
     font-size: 17px;
     width: 100%;
     text-align: center;
+    background: #d4be6a;
+    border-radius: 5px 0;
 }
 
 #content #add_to_cart {
@@ -279,31 +296,7 @@ a {
 }
 
 /* Manager Actions */
-#content #add_item input {
-    font-size: 18px;
-    margin: 5px 0;
-    padding: 3px;
-}
-
-#content #process_delivery input {
-    font-size: 18px;
-    margin: 5px 0;
-    padding: 3px;
-}
-
-#content #daily_report input {
-    font-size: 18px;
-    margin: 5px 0;
-    padding: 3px;
-}
-
-#content #top_selling input {
-    font-size: 18px;
-    margin: 5px 0;
-    padding: 3px;
-}
-
-#content #process_return input {
+#content #add_item input, #content #process_return input, #content #process_return input, #content #process_delivery input, #content #daily_report input, #content #top_selling input {
     font-size: 18px;
     margin: 5px 0;
     padding: 3px;

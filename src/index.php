@@ -26,7 +26,7 @@
             <div id="login">
                 <?php
                     if ($loggedin) {
-                        echo '<div>Welcome! You\'re logged in as ID '.$_SESSION['username'].'.<br />';
+                        echo '<div>Welcome! You\'re logged in as '.$_SESSION['username'].'.<br />';
                         echo '<a href="?p=cart">View Cart</a> | <a href="?act=logout">Log out</a></div>';
                     } else {
                         echo '<div id="signin"><form action="?act=login" method="post">';
@@ -46,6 +46,18 @@
                     }
                 ?>
             </div>
+        </div>
+        <div id="search_bar">
+            <form action="index.php" method="get">
+                <input type="hidden" name="p" value="search" />
+                <select name="type" style="width: 30%;">
+                    <option value="title">Title</option>
+                    <option value="category">Category</option>
+                    <option value="artist">Leading Singer</option>
+                </select>
+                <input type="text" name="term" size="50%" placeholder="Search" />
+                <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
+            </form>
         </div>
         <div id="stripe-1"></div>
         <div id="stripe-2"></div>
