@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS purchase;
 DROP TABLE IF EXISTS return_item;
 DROP TABLE IF EXISTS item;
 DROP TABLE IF EXISTS customer;
+DROP TABLE IF EXISTS purchase_return;
 
 # (re) create tables
 CREATE TABLE item (
