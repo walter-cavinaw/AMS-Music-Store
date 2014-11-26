@@ -30,11 +30,11 @@
             echo '<p><a href="javascript:history.go(-1)">Go Back</a></p>';
             die();
         }
-        
         $quantityBought = $result->fetch_row()[0];
-        
+
+    
         //Make sure the quantity being returned is less than or equal to the quantity purchased
-        if($quantityBought>=$_POST['quantity']){
+        if($quantityBought<$_POST['quantity']){
             echo '<h1>Error returning item</h1>';
             echo '<p>Too many items being returned.</p>';
             echo '<p>Make sure the quantity being returned is less than or equal to the quantity purchased.</p>';
@@ -50,8 +50,15 @@
         
         $retid = $max + 1;
         //All checks out, make return id
+        //First purchase_return
+        $query = $connection->prepare('INSERT INTO purchase_return VALUES (?, CURDATE(), ?)');
+        $query->bind_param('ss', $retid, $_POST['rid']);
+        $query->execute();
+        $result = $query->get_result();
+        $query->close();
+        //Next return_item
         $query = $connection->prepare('INSERT INTO return_item VALUES (?, ?, ?)');
-        $query->bind_param('sss', $retid, $_POST['upd'], $_POST['quantity']);
+        $query->bind_param('sss', $retid, $_POST['upc'], $_POST['quantity']);
         $query->execute();
         $result = $query->get_result();
         $query->close();
