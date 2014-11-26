@@ -9,7 +9,7 @@
         
         if($result->num_rows<1){
             echo '<h1>Error processing delivery</h1>';
-            echo '<p>No mathcing receiptID found.</p>';
+            echo '<p>No matching receiptID found.</p>';
             echo '<p><a href="javascript:history.go(-1)">Go Back</a></p>';
             die();
         }
