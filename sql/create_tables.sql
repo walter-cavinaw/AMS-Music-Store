@@ -84,7 +84,11 @@ CREATE TABLE purchase_return (
     retid INT NOT NULL AUTO_INCREMENT,
     retdate DATE NOT NULL,
     receiptId INT NOT NULL,
-    PRIMARY KEY (retid)
+    PRIMARY KEY (retid),
+    FOREIGN KEY (receiptID)
+    REFERENCES purchase (receiptId)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
 );
 
 CREATE TABLE return_item (
