@@ -3,4 +3,5 @@
     <p><input type="text" name="date" placeholder="Date of Interest" size="40" /></p>
     <p><input type="text" name="number" placeholder="Number of bestsellers to display" size="40" /></p>
     <p><input type="submit" value="View" /></p>
+    <p>Delivery date must match YYMMDD</p>
 </form>
