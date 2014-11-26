@@ -8,6 +8,13 @@
         $upcs = $query->get_result();
         $query->close();
         
+        //Check to make sure there are results
+        if($upcs->num_rows == 0){
+            echo '<h1>No sales found from that day</h1>';
+                        echo '<p>If you expected results, make sure your date is correct and follows the format YYMMDD</p>';
+            die();
+        }
+        
         //Set up the column headers
         echo '<h1>Total sales for ' . $_POST['date'] . '</h1>';
         echo '<table width=100%>';

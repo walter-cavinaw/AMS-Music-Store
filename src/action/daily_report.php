@@ -9,6 +9,12 @@
 
         $query->close();
 
+        //Check to make sure there are results
+        if($itemsBoughtThatDay->num_rows == 0){
+            echo '<h1>No sales found from that day</h1>';
+            echo '<p>If you expected results, make sure your date is correct and follows the format YYMMDD</p>';
+            die();
+        }
         //Get the purchases from that day
         $query = $connection->prepare('SELECT receiptID FROM purchase WHERE pdate = ?');
         $query->bind_param('s', $_POST['date']);
