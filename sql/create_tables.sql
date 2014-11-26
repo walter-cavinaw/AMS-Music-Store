@@ -41,7 +41,7 @@ CREATE TABLE has_song (
 );
 
 CREATE TABLE customer (
-    cid INT NOT NULL AUTO_INCREMENT,
+    cid VARCHAR(32) NOT NULL ,
     cpassword VARCHAR(32) NOT NULL,
     cname VARCHAR(64) NOT NULL,
     address VARCHAR(128) NOT NULL,
@@ -52,7 +52,7 @@ CREATE TABLE customer (
 CREATE TABLE purchase (
     receiptId INT NOT NULL AUTO_INCREMENT,
     pdate DATE NOT NULL,
-    cid INT NOT NULL,
+    cid VARCHAR(32) NOT NULL,
     cardNumber CHAR(16) NOT NULL,
     expiryDate CHAR(4) NOT NULL,
     expectedDate DATE NULL,
@@ -103,11 +103,11 @@ CREATE TABLE return_item (
 );
 
 # Insert example values for testing
-INSERT INTO customer (cid, cpassword, cname, address, phone) VALUES (1, "abc123", "J Johnson", "123 Main St", "(555) 666-7777");
-INSERT INTO customer (cid, cpassword, cname, address, phone) VALUES (2, "abc123", "M Mitchell", "123 Main St", "(555) 000-2222");
-INSERT INTO customer (cid, cpassword, cname, address, phone) VALUES (3, "abc123", "S Swarovski", "123 Main St", "(555) 123-1234");
-INSERT INTO customer (cid, cpassword, cname, address, phone) VALUES (4, "abc123", "P Prado", "123 Main St", "(555) 312-4312");
-INSERT INTO customer (cid, cpassword, cname, address, phone) VALUES (5, "abc123", "T Tokarski", "123 Main St", "(555) 012-3456");
+INSERT INTO customer (cid, cpassword, cname, address, phone) VALUES ("johnson", "abc123", "J Johnson", "123 Main St", "(555) 666-7777");
+INSERT INTO customer (cid, cpassword, cname, address, phone) VALUES ("mitchell", "abc123", "M Mitchell", "123 Main St", "(555) 000-2222");
+INSERT INTO customer (cid, cpassword, cname, address, phone) VALUES ("swarovski", "abc123", "S Swarovski", "123 Main St", "(555) 123-1234");
+INSERT INTO customer (cid, cpassword, cname, address, phone) VALUES ("prado", "abc123", "P Prado", "123 Main St", "(555) 312-4312");
+INSERT INTO customer (cid, cpassword, cname, address, phone) VALUES ("tokarski", "abc123", "T Tokarski", "123 Main St", "(555) 012-3456");
 
 INSERT INTO item (upc, title, itemtype, category, company, releaseyear, price, stock) VALUES (1, "+", "CD", "Folk", "Asylum Records", 2011, 9.99, 15);
 INSERT INTO lead_singer (upc, sname) VALUES (1, "Ed Sheeran");
@@ -158,44 +158,44 @@ INSERT INTO has_song (upc, title) VALUES (5, "Hear Me");
 INSERT INTO has_song (upc, title) VALUES (5, "Demons");
 INSERT INTO has_song (upc, title) VALUES (5, "On Top Of The World");
 
-INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (1, "2014-01-01", 1, "5555666677778888", "0916", "2014-01-04", "2014-01-02");
+INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (1, "2014-01-01", "johnson", "5555666677778888", "0916", "2014-01-04", "2014-01-02");
 INSERT INTO purchase_item (receiptId, upc, quantity) VALUES (1, 2, 1);
 INSERT INTO purchase_item (receiptId, upc, quantity) VALUES (1, 1, 2);
 INSERT INTO purchase_item (receiptId, upc, quantity) VALUES (1, 5, 1);
 
-INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (2, "2014-01-03", 2, "5555666655556666", "0317", NULL, NULL);
+INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (2, "2014-01-03", "mitchell", "5555666655556666", "0317", NULL, NULL);
 INSERT INTO purchase_item (receiptId, upc, quantity) VALUES (2, 3, 1);
 INSERT INTO purchase_item (receiptId, upc, quantity) VALUES (2, 4, 1);
 
 
-INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (3, "2014-01-18", 4, "7777888877778888", "1116", "2014-01-20", "2014-01-19");
+INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (3, "2014-01-18", "prado", "7777888877778888", "1116", "2014-01-20", "2014-01-19");
 INSERT INTO purchase_item (receiptId, upc, quantity) VALUES (3, 1, 1);
 INSERT INTO purchase_item (receiptId, upc, quantity) VALUES (3, 2, 1);
 INSERT INTO purchase_item (receiptId, upc, quantity) VALUES (3, 3, 1);
 
-INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (4, "2014-02-02", 3, "5555666644445555", "1017", NULL, NULL);
+INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (4, "2014-02-02", "swarovski", "5555666644445555", "1017", NULL, NULL);
 INSERT INTO purchase_item (receiptId, upc, quantity) VALUES (4, 5, 2);
 
-INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (5, "2014-02-09", 1, "5555666677778888", "0916", "2014-02-11", "2014-02-09");
+INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (5, "2014-02-09", "johnson", "5555666677778888", "0916", "2014-02-11", "2014-02-09");
 INSERT INTO purchase_item (receiptId, upc, quantity) VALUES (5, 3, 1);
 INSERT INTO purchase_item (receiptId, upc, quantity) VALUES (5, 1, 2);
 INSERT INTO purchase_item (receiptId, upc, quantity) VALUES (5, 5, 1);
 INSERT INTO purchase_item (receiptId, upc, quantity) VALUES (5, 4, 1);
 
-INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (6, "2014-03-13", 5, "5432234554322345", "0619", "2014-03-18", "2014-03-14");
+INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (6, "2014-03-13", "tokarski", "5432234554322345", "0619", "2014-03-18", "2014-03-14");
 INSERT INTO purchase_item (receiptId, upc, quantity) VALUES (6, 2, 1);
 
-INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (7, "2014-03-15", 3, "5555666644445555", "1017", NULL, NULL);
+INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (7, "2014-03-15", "swarovski", "5555666644445555", "1017", NULL, NULL);
 INSERT INTO purchase_item (receiptId, upc, quantity) VALUES (7, 5, 1);
 INSERT INTO purchase_item (receiptId, upc, quantity) VALUES (7, 4, 2);
 
-INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (8, "2014-03-17", 2, "5555666655556666", "0317", "2014-03-20", "2014-03-17");
+INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (8, "2014-03-17", "mitchell", "5555666655556666", "0317", "2014-03-20", "2014-03-17");
 INSERT INTO purchase_item (receiptId, upc, quantity) VALUES (8, 2, 1);
 
-INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (9, "2014-03-29", 1, "5555666677778888", "0916", "2014-03-31", "2014-03-30");
+INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (9, "2014-03-29", "johnson", "5555666677778888", "0916", "2014-03-31", "2014-03-30");
 INSERT INTO purchase_item (receiptId, upc, quantity) VALUES (9, 1, 1);
 
-INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (10, "2014-04-02", 5, "5432234554322345", "0619", "2014-04-05", "2014-04-03");
+INSERT INTO purchase (receiptId, pdate, cid, cardNumber, expiryDate, expectedDate, deliveredDate) VALUES (10, "2014-04-02", "tokarski", "5432234554322345", "0619", "2014-04-05", "2014-04-03");
 INSERT INTO purchase_item (receiptId, upc, quantity) VALUES (10, 3, 1);
 
 INSERT INTO purchase_return (retid, retdate, receiptId) VALUES (1, "2014-02-13", 4);
