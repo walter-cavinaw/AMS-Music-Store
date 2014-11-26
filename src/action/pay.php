@@ -22,7 +22,7 @@
                 $query = $connection->prepare('SELECT * FROM purchase WHERE deliveredDate IS NULL AND expectedDate IS NOT NULL'); //Find outstanding orders
                 $query->execute();
                 $numOutstandingOrders = $query->get_result()->num_rows;
-                var_dump($numOutstandingOrders);
+                //var_dump($numOutstandingOrders);
                 $expectedDelay= strval(2 + round($numOutstandingOrders/6)); //Say standard is two days and we can deliver 6 per day
                 $query->close(); //Need to close it so we can execute the next query
                 $query = $connection->prepare('INSERT INTO purchase (pdate, cid, cardNumber, expiryDate, expectedDate) VALUES (CURDATE(), ?, ?, ?, DATE_ADD(CURDATE(), INTERVAL ?  DAY))');

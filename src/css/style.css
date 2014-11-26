@@ -138,12 +138,13 @@ a {
 
 #header #hcontent #login input[type="text"], #header #hcontent #login input[type="password"] {
     font-size: 14px;
+    border-radius: 7px 0;
 }
 
 #header #hcontent #login input[type="submit"] {
     border: none;
     background: #d4be6a;
-    border-radius: 3px;
+    border-radius: 0 10px;
     color: #486e88;
     margin-left: 3px;
     padding: 18px 6px;
@@ -180,8 +181,8 @@ a {
  */
 #container {
     background: #d4be6a;
-    min-height: 250px;
-    height: 60%;
+    min-height: 450px;
+    height: 10%;
     min-width: 900px;
     width: 64%;
     margin: 50px auto 15px auto;
@@ -203,7 +204,7 @@ a {
 
 #content {
     position: absolute;
-    margin-top: -18px;
+    margin-top: 18px;
     width: 66%;
     display: flex;
     flex-wrap: wrap;

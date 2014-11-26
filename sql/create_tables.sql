@@ -12,8 +12,8 @@ DROP TABLE IF EXISTS customer;
 CREATE TABLE item (
     upc INT NOT NULL,
     title VARCHAR(64) NOT NULL,
-    itemtype VARCHAR(32) NULL,
-    category VARCHAR(32) NULL,
+    itemtype ENUM('CD', 'DVD') NOT NULL,
+    category ENUM('Rock', 'Pop', 'Rap', 'Country', 'Classical', 'New Age', 'Instrumental') NOT NULL,
     company VARCHAR(32) NULL,
     releaseyear INT NULL,
     price REAL NOT NULL,
@@ -80,7 +80,6 @@ CREATE TABLE purchase_item (
         ON UPDATE cascade
 );
 
-DROP TABLE IF EXISTS purchase_return;
 CREATE TABLE purchase_return (
     retid INT NOT NULL AUTO_INCREMENT,
     retdate DATE NOT NULL,
@@ -114,7 +113,7 @@ INSERT INTO customer (cid, cpassword, cname, address, phone) VALUES ("swarovski"
 INSERT INTO customer (cid, cpassword, cname, address, phone) VALUES ("prado", "abc123", "P Prado", "123 Main St", "(555) 312-4312");
 INSERT INTO customer (cid, cpassword, cname, address, phone) VALUES ("tokarski", "abc123", "T Tokarski", "123 Main St", "(555) 012-3456");
 
-INSERT INTO item (upc, title, itemtype, category, company, releaseyear, price, stock) VALUES (1, "+", "CD", "Folk", "Asylum Records", 2011, 9.99, 15);
+INSERT INTO item (upc, title, itemtype, category, company, releaseyear, price, stock) VALUES (1, "+", "CD", "Pop", "Asylum Records", 2011, 9.99, 15);
 INSERT INTO lead_singer (upc, sname) VALUES (1, "Ed Sheeran");
 INSERT INTO has_song (upc, title) VALUES (1, "The A Team");
 INSERT INTO has_song (upc, title) VALUES (1, "You Need Me, I Don't Need You");
@@ -123,7 +122,7 @@ INSERT INTO has_song (upc, title) VALUES (1, "Drunk");
 INSERT INTO has_song (upc, title) VALUES (1, "Small Bump");
 INSERT INTO has_song (upc, title) VALUES (1, "Give Me Love");
 
-INSERT INTO item (upc, title, itemtype, category, company, releaseyear, price, stock) VALUES (2, "Comedown Machine", "CD", " Indie Rock", "RCA", 2013, 12.99, 25);
+INSERT INTO item (upc, title, itemtype, category, company, releaseyear, price, stock) VALUES (2, "Comedown Machine", "CD", "Rock", "RCA", 2013, 12.99, 25);
 INSERT INTO lead_singer (upc, sname) VALUES (2, "Julian Casablancas");
 INSERT INTO lead_singer (upc, sname) VALUES (2, "Albert Hammond, Jr.");
 INSERT INTO lead_singer (upc, sname) VALUES (2, "Nick Valensi");
@@ -134,7 +133,7 @@ INSERT INTO has_song (upc, title) VALUES (2, "Tap Out");
 INSERT INTO has_song (upc, title) VALUES (2, "50/50");
 INSERT INTO has_song (upc, title) VALUES (2, "Partners In Crime");
 
-INSERT INTO item (upc, title, itemtype, category, company, releaseyear, price, stock) VALUES (3, "Suck It And See", "CD", " Psychedelic Rock", "Domino", 2011, 10.99, 20);
+INSERT INTO item (upc, title, itemtype, category, company, releaseyear, price, stock) VALUES (3, "Suck It And See", "CD", "Rock", "Domino", 2011, 10.99, 20);
 INSERT INTO lead_singer (upc, sname) VALUES (3, "Alex Turner");
 INSERT INTO lead_singer (upc, sname) VALUES (3, "Jamie Cook");
 INSERT INTO lead_singer (upc, sname) VALUES (3, "Nick O'Malley");
@@ -145,14 +144,14 @@ INSERT INTO has_song (upc, title) VALUES (3, "Suck It and See");
 INSERT INTO has_song (upc, title) VALUES (3, "Black Treacle");
 
 INSERT INTO item (upc, title, itemtype, category, company, releaseyear, price, stock) VALUES (4, "Love Songs", "DVD", "Rock", "Rocket", 1995, 19.99, 15);
-INSERT INTO lead_singer (upc, sname) VALUES (4, "Elton Hohn");
+INSERT INTO lead_singer (upc, sname) VALUES (4, "Elton John");
 INSERT INTO has_song (upc, title) VALUES (4, "You Can Make History (Young Again)");
 INSERT INTO has_song (upc, title) VALUES (4, "Sacrifice");
 INSERT INTO has_song (upc, title) VALUES (4, "Your Song");
 INSERT INTO has_song (upc, title) VALUES (4, "The One");
 INSERT INTO has_song (upc, title) VALUES (4, "Blue Eyess");
 
-INSERT INTO item (upc, title, itemtype, category, company, releaseyear, price, stock) VALUES (5, "Night Visions", "DVD", "Alternative Rock", "Interscope", 2012, 20.99, 20);
+INSERT INTO item (upc, title, itemtype, category, company, releaseyear, price, stock) VALUES (5, "Night Visions", "DVD", "Rock", "Interscope", 2012, 20.99, 20);
 INSERT INTO lead_singer (upc, sname) VALUES (5, "Dan Reynolds");
 INSERT INTO lead_singer (upc, sname) VALUES (5, "Daniel Wayne Sermon");
 INSERT INTO lead_singer (upc, sname) VALUES (5, "Ben McKee");
